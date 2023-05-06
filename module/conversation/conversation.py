@@ -252,6 +252,8 @@ class Conversation(UI):
 
         def get_similarity(sentences, target, threshold=0.8):
             import difflib
+            if target is None:
+                return 0, ''
             max_ratio = 0
             max_sentence = ''
             for sentence in sentences:
